@@ -79,28 +79,28 @@ namespace ETLWorkerService
             // baca files
             
         }
-        private async void ProcessFile(string file, ProductdbContext db)
-        {
-            // baca file
-            // simpan ke database
-            // baca file csv     
-            using (var reader = new StreamReader(file))
-            using (var csv = new CsvReader(reader, new CsvConfiguration(CultureInfo.InvariantCulture)
-            {
-                MissingFieldFound = null,
-                HeaderValidated = null,
-                HasHeaderRecord = true,
-            }))
-            {
-                var records = csv.GetRecords<Product>();
+        // private async void ProcessFile(string file, ProductdbContext db)
+        // {
+        //     // baca file
+        //     // simpan ke database
+        //     // baca file csv     
+        //     using (var reader = new StreamReader(file))
+        //     using (var csv = new CsvReader(reader, new CsvConfiguration(CultureInfo.InvariantCulture)
+        //     {
+        //         MissingFieldFound = null,
+        //         HeaderValidated = null,
+        //         HasHeaderRecord = true,
+        //     }))
+        //     {
+        //         var records = csv.GetRecords<Product>();
 
-                // simpan ke database
-                await db.Products.AddRangeAsync(records);
-                await db.SaveChangesAsync();
-            }
-            // hapus file
-            File.Delete(file);
-        }
+        //         // simpan ke database
+        //         await db.Products.AddRangeAsync(records);
+        //         await db.SaveChangesAsync();
+        //     }
+        //     // hapus file
+        //     File.Delete(file);
+        // }
 
     }
 }

@@ -9,7 +9,7 @@
     },
     "Container (Dockerfile)": {
       "commandName": "Docker",
-      "DockerfileRunArguments": "--network=demodb_trainingnet -v E://Temp//csv:/csvdata:rw"
+      "DockerfileRunArguments": "--network=demodb_trainingnet -v ./csvdata:/csvdata"
     }
   },
   "$schema": "http://json.schemastore.org/launchsettings.json"
