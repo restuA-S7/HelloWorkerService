@@ -1,0 +1,16 @@
+{
+  "profiles": {
+    "ETLWorkerService": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development"
+      },
+      "dotnetRunMessages": true
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker",
+      "DockerfileRunArguments": "--network=demodb_trainingnet -v E://Temp//csv:/csvdata:rw"
+    }
+  },
+  "$schema": "http://json.schemastore.org/launchsettings.json"
+}
